@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:picker="http://schemas.android.com/apk/res/us.dustinj.locationstore" >
+
+    <PreferenceCategory android:title="Server Connection" >
+        <EditTextPreference
+            android:name="Server Preference"
+            android:defaultValue="Dustinj.us"
+            android:key="hostNamePref"
+            android:summary="Host name of the location server"
+            android:title="Server" />
+        <EditTextPreference
+            android:name="API Key Preference"
+            android:defaultValue=""
+            android:key="apiKeyPref"
+            android:summary=""
+            android:title="API Key" />
+        <Preference
+            android:key="testConnectionPref"
+            android:summary="Verify API key and server connection"
+            android:title="Test Server Connection" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Miscellaneous" >
+        <PreferenceScreen
+            android:key="greetingPrefs"
+            android:summary="Default text for the email subject, etc."
+            android:title="Greeting Defaults" >
+            <PreferenceCategory android:title="Greeting Defaults" >
+                <EditTextPreference
+                    android:defaultValue="My Location"
+                    android:key="shareSubjectPref"
+                    android:title="Email Subject" />
+                <EditTextPreference
+                    android:defaultValue="My live location"
+                    android:key="shareIntroPref"
+                    android:title="Introduction" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="Miscellaneous" >
+                <Preference
+                    android:key="greetingDefaultPrefs.resetToDefaults"
+                    android:summary="Reset greatings to their default values"
+                    android:title="Reset to Defaults" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="advancedPrefs"
+            android:summary=""
+            android:title="Advanced Settings" >
+            <PreferenceCategory android:title="General" >
+                <EditTextPreference
+                    android:defaultValue="150"
+                    android:inputType="number"
+                    android:key="locationAccuracyPref"
+                    android:summary="Locations must have an accuracy of 150 meters to be recorded"
+                    android:title="Minimum Accuracy" />
+                <EditTextPreference
+                    android:defaultValue="10"
+                    android:inputType="number"
+                    android:key="locationSampleRatePref"
+                    android:summary="Every 10 seconds store the most accurate location available"
+                    android:title="Maximum Sample Rate" />
+                <EditTextPreference
+                    android:defaultValue="2"
+                    android:inputType="number"
+                    android:key="locationUploadPref"
+                    android:summary="Upload no faster than once every 2 minutes"
+                    android:title="Location Upload" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="Forced Fix" >
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="enableForcedFixPref"
+                    android:summary=""
+                    android:title="Enable Forced Fix" />
+                <EditTextPreference
+                    android:defaultValue="10"
+                    android:dependency="enableForcedFixPref"
+                    android:inputType="number"
+                    android:key="forcedFixPref"
+                    android:summary="Acquire a location fix at least every 10 minutes"
+                    android:title="Forced Fix Period" />
+                <EditTextPreference
+                    android:defaultValue="15"
+                    android:dependency="enableForcedFixPref"
+                    android:inputType="number"
+                    android:key="forcedFixBatteryCutoffPref"
+                    android:summary="Disable forced fix when battery is lower than 15%"
+                    android:title="Forced Fix Battery Cutoff" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="Miscellaneous" >
+                <Preference
+                    android:key="advancedPrefs.resetToDefaults"
+                    android:summary="Reset advanced settings to their default values"
+                    android:title="Reset to Defaults" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <Preference
+            android:key="sendFeedbackPref"
+            android:summary="Email feedback to the developer"
+            android:title="Send Feedback" />
+    </PreferenceCategory>
+</PreferenceScreen>

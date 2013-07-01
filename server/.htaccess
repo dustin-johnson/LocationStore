@@ -1,0 +1,10 @@
+AddType application/x-httpd-php53 php53 php
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# 1 Week
+<filesMatch ".(ico|css|js)$">
+Header set Cache-Control "max-age=604800, public"
+</filesMatch>

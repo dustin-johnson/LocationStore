@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1083.5759"
+   height="1730.462"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="redpindrop.svg"
+   inkscape:export-filename="C:\Users\Dustinj\pins\right.png"
+   inkscape:export-xdpi="1.0111787"
+   inkscape:export-ydpi="1.0111787">
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>PinDrop</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs15" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="988"
+     id="namedview13"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.16"
+     inkscape:cx="-692.4366"
+     inkscape:cy="194.73203"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g2994" />
+  <title
+     id="title4">PinDrop</title>
+  <g
+     id="g2994"
+     transform="translate(-580.38166,-180.31529)">
+    <path
+       style="fill:#e81e25;fill-rule:evenodd;stroke:#000000;stroke-width:110.5;stroke-miterlimit:10;stroke-dasharray:none;stroke-linejoin:round"
+       inkscape:connector-curvature="0"
+       id="svg_2"
+       d="m 1123.563,1892.2773 c -38.7661,-190.301 -107.1161,-348.665 -189.90313,-495.4399 -61.40699,-108.8721 -132.54395,-209.363 -198.36396,-314.938 -21.97204,-35.244 -40.93402,-72.4771 -62.04705,-109.05408 -42.21595,-73.13696 -76.44397,-157.935 -74.26896,-267.932 2.125,-107.47297 33.20798,-193.68396 78.03,-264.172 73.719,-115.93497 197.20099,-210.98898 362.884,-235.96898 135.4659,-20.424 262.4751,14.082 352.543,66.748 73.6001,43.03799 130.596,100.52701 173.92,168.28 45.22,70.716 76.359,154.26001 78.971,263.23199 1.337,55.83002 -7.805,107.53199 -20.684,150.41797 -13.0339,43.40906 -33.996,79.69501 -52.646,118.45404 -36.406,75.65896 -82.049,144.98196 -127.855,214.34606 -136.437,206.6059 -264.4961,417.3099 -320.5799,706.0269 z"
+       stroke-miterlimit="10"
+       clip-rule="evenodd" />
+    <path
+       style="stroke-width:172.80000305;stroke-linejoin:round;stroke-miterlimit:10"
+       d="m 811.44152,535.72095 499.37108,4.80359 -4.8037,499.37106 z"
+       id="rect3776"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:transform-center-x="77.994189"
+       inkscape:transform-center-y="87.619082" />
+  </g>
+</svg>

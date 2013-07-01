@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Location Store</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="new_export">New Export</string>
+    <string name="refresh_location">Refresh Location</string>
+    <string name="title_preferences">Settings</string>
+
+    <string name="days_label">Days</string>
+    <string name="hours_label">Hours</string>
+    <string name="minutes_label">Minutes</string>
+    <string name="forever_checkBox">Export never expires</string>
+
+    <string name="start_time_label_default">Start: 12:14 AM</string>
+    <string name="end_time_label_default">End: 14:14 AM</string>
+    <string name="copy_button_description">Copy</string>
+    <string name="edit_button_description">Edit</string>
+    <string name="view_button_description">View</string>
+    <string name="share_button_description">Share</string>
+    <string name="delete_button_description">Delete</string>
+
+    <string name="share_dialog_title">Share location with…</string>
+
+    <string name="feedback_body">I noticed that…</string>
+
+</resources>
