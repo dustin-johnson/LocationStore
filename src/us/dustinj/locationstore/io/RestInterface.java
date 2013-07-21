@@ -17,6 +17,8 @@
 
 package us.dustinj.locationstore.io;
 
+import java.util.Locale;
+
 import us.dustinj.locationstore.AppSettings;
 
 public class RestInterface {
@@ -59,6 +61,6 @@ public class RestInterface {
     }
 
     private static String getBaseURL(AppSettings settings, String method) {
-        return "http://" + settings.GetHostName() + urlPath + method + ".php";
+        return "https://" + settings.GetHostName().toLowerCase(Locale.ENGLISH) + urlPath + method + ".php";
     }
 }
