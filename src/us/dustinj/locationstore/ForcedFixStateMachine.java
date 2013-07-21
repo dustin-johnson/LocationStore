@@ -41,7 +41,7 @@ public class ForcedFixStateMachine extends StateMachine {
     }
 
     private static void logMsg(String msg) {
-        // android.util.Log.d("ForcedFixStateMachine", msg);
+        android.util.Log.d("ForcedFixStateMachine", msg);
     }
 
     ForcedFixStateMachine(String name, LocationService locationService, AppSettings appSettings) {

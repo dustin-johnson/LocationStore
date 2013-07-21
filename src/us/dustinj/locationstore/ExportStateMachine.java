@@ -40,7 +40,7 @@ public class ExportStateMachine extends StateMachine {
     }
 
     private static void logMsg(String msg) {
-        // android.util.Log.d("ExportStateMachine", msg);
+        android.util.Log.d("ExportStateMachine", msg);
     }
 
     ExportStateMachine(String name, LocationService locationService, AppSettings.Timers timers) {

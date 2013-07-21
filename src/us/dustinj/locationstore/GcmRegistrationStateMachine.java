@@ -37,7 +37,7 @@ public class GcmRegistrationStateMachine extends StateMachine {
     }
 
     private void logMsg(String msg) {
-        // android.util.Log.d(this.getClass().getSimpleName(), msg);
+        android.util.Log.d(this.getClass().getSimpleName(), msg);
     }
 
     GcmRegistrationStateMachine(String name, LocationService locationService, AppSettings.Timers timers) {

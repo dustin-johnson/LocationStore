@@ -31,6 +31,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.BatteryManager;
 import android.os.Binder;
 import android.os.Bundle;
@@ -67,7 +68,7 @@ public class LocationService extends Service implements LocationListener, HttpSt
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        // Log.d(this.getClass().getSimpleName(), "onStartCommand");
+        Log.d(this.getClass().getSimpleName(), "onStartCommand");
 
         Tick();
 
@@ -147,9 +148,11 @@ public class LocationService extends Service implements LocationListener, HttpSt
     }
 
     public boolean TurnOnGPS() {
+        Log.d(this.getClass().getSimpleName(), "TurnOnGPS");
         String allowedLocationProviders = Settings.Secure.getString(getContentResolver(), Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
 
         if (allowedLocationProviders == null || !allowedLocationProviders.contains(LocationManager.GPS_PROVIDER)) {
+            Log.d(this.getClass().getSimpleName(), "GPS is off");
             return false;
         }
 
@@ -159,6 +162,7 @@ public class LocationService extends Service implements LocationListener, HttpSt
     }
 
     public void TurnOffGPS() {
+        Log.d(this.getClass().getSimpleName(), "TurnOffGPS");
         m_locationManager.removeUpdates(this);
     }
 
@@ -168,7 +172,12 @@ public class LocationService extends Service implements LocationListener, HttpSt
     }
 
     public boolean IsNetworkConnected() {
-        return m_connectivityManager.getActiveNetworkInfo() != null && m_connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();
+        NetworkInfo info = m_connectivityManager.getActiveNetworkInfo();
+        boolean connected = info != null && info.isConnectedOrConnecting();
+
+        Log.d(this.getClass().getSimpleName(), "IsNetworkConnected - canGetInfo: " + (info != null ? "True" : "False") + "  connected: " + (connected ? "True" : "False"));
+
+        return connected;
     }
 
     private final BroadcastReceiver m_gcmMessageIntentReceiver = new BroadcastReceiver() {
