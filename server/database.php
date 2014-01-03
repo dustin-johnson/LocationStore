@@ -19,7 +19,7 @@
 function connectToDB()
 {
     $dbUsername = "locStore";
-    $dbPassword = "defaultLocationStorePassword";
+    $dbPassword = "ggvda0@CJ!virb3p8";
     $dbName = "locationStore";
 
     $mysqli = new mysqli("localhost", $dbUsername, $dbPassword, $dbName);
@@ -58,10 +58,7 @@ function createLocationTable()
 function dropLocationTable()
 {
     $mysqli = connectToDB();
-
-    $query = "DROP TABLE locations";
-    $result = $mysqli->query($query);
-
+    $result = $mysqli->query("DROP TABLE locations");
     mysqli_close($mysqli);
 }
 
@@ -77,6 +74,10 @@ function createExportsTable()
                                    active BOOLEAN NOT NULL DEFAULT TRUE,
                                    startTimestamp BIGINT UNSIGNED,
                                    durationMs BIGINT UNSIGNED,
+                                   minLat_deg DOUBLE NOT NULL DEFAULT '-90.0',
+                                   maxLat_deg DOUBLE NOT NULL DEFAULT '90.0',
+                                   minLon_deg DOUBLE NOT NULL DEFAULT '-180.0',
+                                   maxLon_deg DOUBLE NOT NULL DEFAULT '180.0',
                                    PRIMARY KEY(ID),
                                    KEY(exportID));";
     $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
@@ -87,10 +88,7 @@ function createExportsTable()
 function dropExportsTable()
 {
     $mysqli = connectToDB();
-
-    $query = "DROP TABLE exports";
-    $result = $mysqli->query($query);
-
+    $result = $mysqli->query("DROP TABLE exports");
     mysqli_close($mysqli);
 }
 
@@ -101,11 +99,13 @@ function createUsersTable()
     $query = "CREATE TABLE users(ID INT NOT NULL AUTO_INCREMENT,
                                  timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                  userID VARCHAR(255),
+                                 username VARCHAR(255),
+                                 password VARCHAR(255),
                                  internalID VARCHAR(255),
                                  apiKey VARCHAR(255),
                                  gcmRegistrationID VARCHAR(255),
                                  PRIMARY KEY(ID),
-                                 UNIQUE KEY(userID),
+                                 UNIQUE KEY(username),
                                  UNIQUE KEY(internalID),
                                  UNIQUE KEY(apiKey));";
     $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
@@ -116,7 +116,7 @@ function createUsersTable()
 function dropUsersTable()
 {
     $mysqli = connectToDB();
-    $result = $mysqli->query("DROP TABLE users") or die($mysqli->error.__LINE__);
+    $result = $mysqli->query("DROP TABLE users");
     mysqli_close($mysqli);
 }
 
@@ -141,7 +141,7 @@ function createViewsTable()
 function dropViewsTable()
 {
     $mysqli = connectToDB();
-    $result = $mysqli->query("DROP TABLE views") or die($mysqli->error.__LINE__);
+    $result = $mysqli->query("DROP TABLE views");
     mysqli_close($mysqli);
 }
 

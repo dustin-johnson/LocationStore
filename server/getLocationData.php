@@ -60,7 +60,11 @@ if($exportResult->num_rows > 0)
         $LocationData['userID'] = $usersRow['userID'];
         $exportWhereClause = "internalID = \"" . $mysqli->real_escape_string($exportRow['internalID'])."\" and " .
                              "locationTimestamp >= " . $mysqli->real_escape_string($exportRow['startTimestamp']) . " and " .
-                             "locationTimestamp <= " . $mysqli->real_escape_string($exportRow['startTimestamp'] + $exportRow['durationMs']);
+                             "locationTimestamp <= " . $mysqli->real_escape_string($exportRow['startTimestamp'] + $exportRow['durationMs']) . " and " .
+                             "lat_deg >= " . $mysqli->real_escape_string($exportRow['minLat_deg']) . " and " .
+                             "lat_deg <= " . $mysqli->real_escape_string($exportRow['maxLat_deg']) . " and " .
+                             "lon_deg >= " . $mysqli->real_escape_string($exportRow['minLon_deg']) . " and " .
+                             "lon_deg <= " . $mysqli->real_escape_string($exportRow['maxLon_deg']);
 
         $inputWhereClause = "locationTimestamp >= \"" . $mysqli->real_escape_string($inputMinLocationTimestamp) . "\" and " .
                             "locationTimestamp <= \"" . $mysqli->real_escape_string($inputMaxLocationTimestamp) . "\" and " .
