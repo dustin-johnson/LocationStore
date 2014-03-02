@@ -51,7 +51,7 @@ while ($startOfDay <= $totalTimeResult->EndTimestampSec) {
     $totalLocationCount += $currentTimeResult->Count;
     $dateTimeFormatter->setTimestamp($startOfDay);
     $currentDayStr = $dateTimeFormatter->format('m/d/Y');
-    echo "<a href=\"map.php?count=".$currentTimeResult->Count."&minAccuracy_m=".$inputMinAccuracy_m."&minLocationTimestamp=".($startOfDay*1000)."&maxLocationTimestamp=".($endOfDay*1000-1)."&exportID=".$inputExportID."\">".$currentDayStr."</a> - ".$currentTimeResult->Count."<br>";
+    echo "<a href=\"map.php?count=9999999&minAccuracy_m=".$inputMinAccuracy_m."&minLocationTimestamp=".($startOfDay*1000)."&maxLocationTimestamp=".($endOfDay*1000-1)."&exportID=".$inputExportID."\">".$currentDayStr."</a> - ".$currentTimeResult->Count."<br>";
     $startOfDay = $endOfDay;
 }
 
