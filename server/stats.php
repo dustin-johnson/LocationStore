@@ -90,7 +90,11 @@ function timeQuery($mysqli, $startTime, $endTime)
     $exportWhereClause = "exports.exportID = \"" . $mysqli->real_escape_string($inputExportID) . "\" and " .
                          "exports.internalID = locations.internalID and " .
                          "locations.locationTimestamp >= exports.startTimestamp and " .
-                         "locations.locationTimestamp <= (exports.startTimestamp + exports.durationMs)";
+                         "locations.locationTimestamp <= (exports.startTimestamp + exports.durationMs) and " .
+                         "locations.lat_deg >= exports.minLat_deg and " .
+                         "locations.lat_deg <= exports.maxLat_deg and " .
+                         "locations.lon_deg >= exports.minLon_deg and " .
+                         "locations.lon_deg <= exports.maxLon_deg";
 
     $inputWhereClause = "locations.locationTimestamp >= \"" . max($inputMinLocationTimestamp, $startTime) . "\" and " .
                         "locations.locationTimestamp <= \"" . min($inputMaxLocationTimestamp, $endTime) . "\" and " .
