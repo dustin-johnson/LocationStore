@@ -790,6 +790,8 @@
                                ":" + padNumber(timestamp.getSeconds(), 2) + " " + (timestamp.getHours() > 11 ? "PM" : "AM") + " " +
                                " " + (timestamp.getMonth() + 1) + "/" + timestamp.getDate() + "/" + timestamp.getFullYear() + "</font><br/>";
                 location['accuracy_m'] = ('accuracy_m' in location) ? location['accuracy_m'] : 1000;
+
+                html += "<font class=\"markerInfoCategory\">Timestamp:</font> <font class=\"markerInfoValue\">" + location['locationTimestamp'] + "</font><br/>";
                 html += "<font class=\"markerInfoCategory\">Accuracy:</font> <font class=\"markerInfoValue\">" + Math.round((location['accuracy_m'] * 10) / 10.0) + " m</font><br/>";
 
                 if (location['speed_mps'] != null) {

@@ -19,7 +19,7 @@
 function connectToDB()
 {
     $dbUsername = "locStore";
-    $dbPassword = "ggvda0@CJ!virb3p8";
+    $dbPassword = "defaultLocationStorePassword";
     $dbName = "locationStore";
 
     $mysqli = new mysqli("localhost", $dbUsername, $dbPassword, $dbName);

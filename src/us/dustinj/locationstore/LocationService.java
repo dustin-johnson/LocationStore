@@ -104,7 +104,7 @@ public class LocationService extends Service implements LocationListener, HttpSt
         m_gcmRegistrationStateMachine = GcmRegistrationStateMachine.makeStateMachine(this, m_appSettings.GetTimers());
 
         m_locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        m_locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 1000, 1, this);
+        m_locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 1000, (float) 0.1, this);
 
         m_connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -156,7 +156,7 @@ public class LocationService extends Service implements LocationListener, HttpSt
             return false;
         }
 
-        m_locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1, (float) 0.1, this);
+        m_locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, (float) 0.1, this);
 
         return true;
     }
@@ -164,6 +164,7 @@ public class LocationService extends Service implements LocationListener, HttpSt
     public void TurnOffGPS() {
         Log.d(this.getClass().getSimpleName(), "TurnOffGPS");
         m_locationManager.removeUpdates(this);
+        m_locationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 1000, (float) 0.1, this);
     }
 
     public void FlushLocationAggregator() {
