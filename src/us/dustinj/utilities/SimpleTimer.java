@@ -26,7 +26,6 @@ public class SimpleTimer {
     }
 
     public boolean IsExpired() {
-        // Log.d(this.getClass().getSimpleName(), "IsExpired: markerTime - " + m_markerTime + " currentTime - " + getCurrentMs());
         long currentTime = getCurrentMs();
         boolean expired = ((m_markerTime + m_durationMs) < (currentTime + m_graceTimeMs));
         return expired;

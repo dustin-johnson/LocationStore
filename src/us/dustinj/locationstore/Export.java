@@ -25,6 +25,9 @@ import org.json.JSONObject;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * Model for an export that will back the main activity's view of the created and available exports.
+ */
 public class Export implements Parcelable {
     private long m_startTimeMs = 0;
     private long m_durationMs = 0;

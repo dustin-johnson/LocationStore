@@ -19,6 +19,10 @@ package us.dustinj.locationstore;
 
 import android.location.Location;
 
+/**
+ * Extends the {@code Location} class to allow the convenient transfer of metadata surrounding the location.
+ *
+ */
 public class ExtendedLocation extends Location {
 
     private boolean m_hasBatteryPercent = false;

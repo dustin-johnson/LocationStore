@@ -50,7 +50,6 @@ public class ExportStateMachine extends StateMachine {
         m_locationService = locationService;
         m_timers = timers;
 
-        // Add states, use indentation to show hierarchy
         addState(m_running);
         addState(m_connected, m_running);
         addState(m_idle, m_connected);

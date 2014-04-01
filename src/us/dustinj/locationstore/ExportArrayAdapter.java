@@ -38,6 +38,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Adapts a standard ArrayAdapter to be specific for handling Export models. This class connects the action
+ * buttons for an export in the list (delete, copy, share, edit, etc.) to their intended functionality.
+ *
+ */
 public class ExportArrayAdapter extends ArrayAdapter<Export> {
     private final Context m_context;
     private final Export[] m_exports;
