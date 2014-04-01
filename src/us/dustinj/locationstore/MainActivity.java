@@ -147,14 +147,6 @@ public class MainActivity extends Activity implements ExportResponseHandler, Tim
         }
     }
 
-    public void onDebugButtonClick(View src) {
-        if (m_boundToService) {
-            // m_service.SetGcmRegistrationID(android.text.format.DateFormat.format("h-mm-s-aa", new Date()).toString());
-            m_service
-                    .SetGcmRegistrationID("APA91bH6qnHsc5I-q3hQEtc67NmopJD2KH2O60P1wQuHsELhgxUuK-E0TzSLM1FyqIktN4Qjm5h2po5o6xwKaZTFIHvtGuF1BZBw5kTLLg3WS5DbyRgDHNaBaykMQYDormBZvU1hdh1ZDT56eJhh3RgeLePPFafsXwYkrkAxBkcLhhTCgl3eLUw");
-        }
-    }
-
     @Override
     public void onExportsReceived(int returnCode, ArrayList<Export> exports) {
         setExports(exports);

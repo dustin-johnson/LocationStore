@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/refreshLocationButton"
         android:onClick="onCreateExportClick"
         android:text="@string/new_export" />
 
@@ -35,15 +36,5 @@
         android:layout_alignParentTop="true"
         android:onClick="onRefreshLocationClick"
         android:text="@string/refresh_location" />
-
-    <Button
-        android:id="@+id/debugButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/createExportButton"
-        android:layout_toRightOf="@+id/refreshLocationButton"
-        android:onClick="onDebugButtonClick"
-        android:text="D" />
 
 </RelativeLayout>
