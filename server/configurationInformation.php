@@ -26,7 +26,7 @@
     $dbUsername = "locStore";
 
     // Change this password to match the password entered for the username defined by $dbUsername.
-    $dbPassword = "defaultLocationStorePassword";
+    $dbPassword = "replace_with_actual_password";
 
     // The database name that will house all of the tables needed for this application.
     $dbName = "locationStore";
@@ -35,8 +35,8 @@
 // Google Cloud Messaging (GCM) variables
 {
     // Set POST variables
-    $gcmUrl = 'https://android.googleapis.com/gcm/send';
+    $gcmUrl = "https://android.googleapis.com/gcm/send";
 
     // BROWSER API key from Google APIs
-    $gcmApiKey = "AIzaSyDHcF8rUJ1xGw7WAgZv9sr2cSaMvbAshFg";
+    $gcmApiKey = "replace_with_actual_api_key";
 }

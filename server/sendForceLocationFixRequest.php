@@ -17,7 +17,7 @@
  */
 
 include "standard.php";
-include "configuationInformation.php";
+include "configurationInformation.php";
 include "database.php";
 include "input.php";
 
@@ -99,9 +99,9 @@ mysqli_close($mysqli);
 
 function sendGcmMessage($registrationID, $message)
 {
-    // The below variables are defined in configurationInformation.php.
-    $url = $gcmUrl;
-    $apiKey = $gcmApiKey;
+    // The below global variables are defined in configurationInformation.php.
+    $url = $GLOBALS["gcmUrl"];
+    $apiKey = $GLOBALS["gcmApiKey"];
 
     $fields = array(
                         'registration_ids' => array($registrationID),

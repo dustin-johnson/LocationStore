@@ -16,12 +16,12 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-include "configuationInformation.php";
+include "configurationInformation.php";
 
 function connectToDB()
 {
     // All the connection variables for the next line are defined in configurationInformation.php
-    $mysqli = new mysqli($dbLocation, $dbUsername, $dbPassword, $dbName);
+    $mysqli = new mysqli($GLOBALS["dbLocation"], $GLOBALS["dbUsername"], $GLOBALS["dbPassword"], $GLOBALS["dbName"]);
     if (mysqli_connect_errno())
     {
         printf("DB connection failed: %s\n", mysqli_connect_error());
