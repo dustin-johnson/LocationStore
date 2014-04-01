@@ -16,19 +16,21 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-ini_set("display_errors", "1");
-ERROR_REPORTING(E_ALL);
-
+include "standard.php";
 include "database.php";
 include "input.php";
 
-// update exports set internalID = replace(internalID, "Puck", "50e8a0c1cce2f1.45023834");
+/**
+ *  The entry point for new location samples to be inserted into the database. Location samples come up in JSON as
+ *  formatted by the getJSON method in us.dustinj.locationstore.io.LocationExporter.java using the database fields
+ *  defined in the method GetColumnDefinitions in us.dustinj.locationstore.LocationDatabase.java.
+ */
 
 $mysqli = connectToDB();
 
 if ($debug)
 {
-    // echo json_encode($inputJson, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT) . "\n\n";
+    echo json_encode($inputJson, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT) . "\n\n";
 }
 
 $usersResult = $mysqli->query("SELECT * FROM users WHERE apiKey = \"".$mysqli->real_escape_string($inputApiKey)."\"") or die($mysqli->error.__LINE__);

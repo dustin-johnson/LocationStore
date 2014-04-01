@@ -22,8 +22,4 @@ include "input.php";
 
 phpinfo();
 
-
-// http://dustinj.us/location/?time=1985-12-23 09:45:34.123&deviceID=Dustin&lat_rad=1.1111&lon_rad=2.2222
-//addRow($inputLocationTime, $inputDeviceID, $inputLat_rad, $inputLon_rad);
-
 ?>

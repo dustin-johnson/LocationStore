@@ -20,6 +20,13 @@ include "standard.php";
 include "database.php";
 include "input.php";
 
+/**
+ *  This function is used to determine if the web application is alive and well, including its access to the database.
+ *  It's original (and currently only) purpose is for uptime services to query on a periodic basis to alert the
+ *  administrator when the application is no longer accessible or in an erroneous state. http://siteuptime.com/ is
+ *  currently being used for the mainline's service state monitoring.
+ */
+
 http_response_code(500); // Default to 'Internal Server Error'
 $isOnline = false;
 $mysqli = connectToDB();

@@ -23,6 +23,7 @@
         <title>Location Stats</title>
     </head>
     <body>
+
 <?php
 include "standard.php";
 include "database.php";
@@ -78,7 +79,6 @@ function getEndOfDayTimestamp($inputTimestamp, $timezoneStr)
     $startOfCurrentDayLocal = $currentTimeLocal - ($currentTimeLocal % (3600 * 24));
     $endOfCurrentDayLocal = $startOfCurrentDayLocal + 3600 * 24;
 
-    // echo "inputTimestamp: $inputTimestamp,   offsetSeconds: $offsetSeconds,   currentTimeLocal: $currentTimeLocal,   startOfCurrentDayLocal: $startOfCurrentDayLocal,   endOfCurrentDayLocal: $endOfCurrentDayLocal<br>";
     return $endOfCurrentDayLocal - $offsetSeconds;
 }
 

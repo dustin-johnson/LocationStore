@@ -20,10 +20,13 @@ include "standard.php";
 include "database.php";
 include "input.php";
 
+/**
+ *  Optimize the database and delete any exports that are over a week old (since their expiration date).
+ */
+
 optimizeDB();
 
 $mysqli = connectToDB();
-// Select (startTimestamp + durationMs + (7 * 24 * 3600 * 1000)) as first, (UNIX_TIMESTAMP() * 10000) as second, (startTimestamp + durationMs + (7 * 24 * 3600 * 1000)) <= (UNIX_TIMESTAMP() * 10000) as third from exports
 $mysqli->query("DELETE FROM exports WHERE (startTimestamp + durationMs + (7 * 24 * 3600 * 1000)) <= (UNIX_TIMESTAMP() * 1000)") or die($mysqli->error.__LINE__);
 mysqli_close($mysqli);
 

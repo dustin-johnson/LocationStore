@@ -16,13 +16,12 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+include "configuationInformation.php";
+
 function connectToDB()
 {
-    $dbUsername = "locStore";
-    $dbPassword = "defaultLocationStorePassword";
-    $dbName = "locationStore";
-
-    $mysqli = new mysqli("localhost", $dbUsername, $dbPassword, $dbName);
+    // All the connection variables for the next line are defined in configurationInformation.php
+    $mysqli = new mysqli($dbLocation, $dbUsername, $dbPassword, $dbName);
     if (mysqli_connect_errno())
     {
         printf("DB connection failed: %s\n", mysqli_connect_error());

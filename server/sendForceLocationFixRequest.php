@@ -17,6 +17,7 @@
  */
 
 include "standard.php";
+include "configuationInformation.php";
 include "database.php";
 include "input.php";
 
@@ -98,16 +99,12 @@ mysqli_close($mysqli);
 
 function sendGcmMessage($registrationID, $message)
 {
-    $registrationIDs = array($registrationID);
-
-    // Set POST variables
-    $url = 'https://android.googleapis.com/gcm/send';
-
-    // BROWSER API key from Google APIs
-    $apiKey = "AIzaSyDHcF8rUJ1xGw7WAgZv9sr2cSaMvbAshFg";
+    // The below variables are defined in configurationInformation.php.
+    $url = $gcmUrl;
+    $apiKey = $gcmApiKey;
 
     $fields = array(
-                        'registration_ids' => $registrationIDs,
+                        'registration_ids' => array($registrationID),
                         'collapse_key'     => $message,
                         'data'             => array("messageID" => $message)
                     );

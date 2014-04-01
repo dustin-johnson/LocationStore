@@ -20,8 +20,12 @@ include "standard.php";
 include "database.php";
 include "input.php";
 
-http_response_code(500); // Default to 'Internal Server Error'
+/**
+ *  Returns HTTP status code 200 if the API key provided is a valid key, otherwise status code 401 (Unauthorized, user
+ *  not found) is returned.
+ */
 
+http_response_code(500); // Default to 'Internal Server Error'
 $mysqli = connectToDB();
 
 if ($isInputApiKeySet)
@@ -29,12 +33,7 @@ if ($isInputApiKeySet)
     $result = $mysqli->query("SELECT * FROM users WHERE apiKey = \"".$mysqli->real_escape_string($inputApiKey)."\"") or die($mysqli->error.__LINE__);
     if (!$result)
     {
-        if (!$debug)
-        {
-            http_response_code(500); // Internal Server Error, this prevents any data response back
-                                     // to the client, so that text description below gets lost.
-        }
-
+        http_response_code(500); // Internal Server Error
         die($mysqli->error.__LINE__);
     }
 

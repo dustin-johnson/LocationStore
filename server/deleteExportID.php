@@ -32,8 +32,8 @@ if ($usersResult->num_rows > 0)
     $userRow = $usersResult->fetch_assoc();
     $internalID = $userRow['internalID'];
     $query = "UPDATE exports SET active = FALSE WHERE modifiable = TRUE and " . 
-                                       "internalID = \"".$mysqli->real_escape_string($internalID)."\" and " .
-                                       "exportID = \"".$mysqli->real_escape_string($inputExportID)."\";";
+                "internalID = \"".$mysqli->real_escape_string($internalID)."\" and " .
+                "exportID = \"".$mysqli->real_escape_string($inputExportID)."\";";
     if ($debug)
     {
         echo $query . "\n\n";
@@ -45,7 +45,7 @@ if ($usersResult->num_rows > 0)
         if (!$debug)
         {
             http_response_code(500); // Internal Server Error, this prevents any data response back
-                                     // to the client, so that text description below gets lost.
+                                     // to the client, so the text description below gets lost.
         }
 
         die($mysqli->error.__LINE__);
