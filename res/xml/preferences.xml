@@ -54,10 +54,10 @@
                     android:summary="Locations must have an accuracy of 150 meters to be recorded"
                     android:title="Minimum Accuracy" />
                 <EditTextPreference
-                    android:defaultValue="10"
+                    android:defaultValue="60"
                     android:inputType="number"
                     android:key="locationSampleRatePref"
-                    android:summary="Every 10 seconds store the most accurate location available"
+                    android:summary="Every 60 seconds store the most accurate location available"
                     android:title="Maximum Sample Rate" />
                 <EditTextPreference
                     android:defaultValue="2"
@@ -73,11 +73,11 @@
                     android:summary=""
                     android:title="Enable Forced Fix" />
                 <EditTextPreference
-                    android:defaultValue="10"
+                    android:defaultValue="20"
                     android:dependency="enableForcedFixPref"
                     android:inputType="number"
                     android:key="forcedFixPref"
-                    android:summary="Acquire a location fix at least every 10 minutes"
+                    android:summary="Acquire a location fix at least every 20 minutes"
                     android:title="Forced Fix Period" />
                 <EditTextPreference
                     android:defaultValue="15"

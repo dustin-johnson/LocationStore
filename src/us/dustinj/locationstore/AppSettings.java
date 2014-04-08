@@ -152,10 +152,10 @@ public class AppSettings implements OnSharedPreferenceChangeListener {
     public void ResetAdvancedSettingsToDefault() {
         Editor editor = appSharedPrefs.edit();
         editor.putString("locationAccuracyPref", "150");
-        editor.putString("locationSampleRatePref", "10");
+        editor.putString("locationSampleRatePref", "60");
         editor.putString("locationUploadPref", "2");
         editor.putBoolean("enableForcedFixPref", true);
-        editor.putString("forcedFixPref", "10");
+        editor.putString("forcedFixPref", "20");
         editor.putString("forcedFixBatteryCutoffPref", "15");
         editor.commit();
     }
